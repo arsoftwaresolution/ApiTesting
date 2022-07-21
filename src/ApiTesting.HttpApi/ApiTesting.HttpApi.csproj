@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>ApiTesting</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiTesting.Application.Contracts\ApiTesting.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.9.26" />
+    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="5.3.2" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="5.3.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="5.3.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="5.3.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="5.3.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="5.3.2" />
+  </ItemGroup>
+
+</Project>
