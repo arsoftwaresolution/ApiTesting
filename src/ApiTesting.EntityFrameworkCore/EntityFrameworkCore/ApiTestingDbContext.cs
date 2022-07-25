@@ -25,7 +25,7 @@ public class ApiTestingDbContext :
     ITenantManagementDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
-    public DbSet<Treatment> Treatments { get; set; }
+    public DbSet<TreatmentNote> Treatments { get; set; }
     public DbSet<DocumentFile> DocumentFiles { get; set; }
 
     #region Entities from the modules

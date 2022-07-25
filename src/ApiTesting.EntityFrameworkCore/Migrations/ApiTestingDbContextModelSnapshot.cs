@@ -43,7 +43,7 @@ namespace ApiTesting.Migrations
                     b.ToTable("DocumentFiles");
                 });
 
-            modelBuilder.Entity("ApiTesting.Models.Treatment", b =>
+            modelBuilder.Entity("ApiTesting.Models.TreatmentNote", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
@@ -52,6 +52,9 @@ namespace ApiTesting.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("FileName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Key")
                         .HasColumnType("text");
 
                     b.Property<string>("Message")

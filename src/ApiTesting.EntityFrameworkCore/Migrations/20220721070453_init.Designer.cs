@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace ApiTesting.Migrations
 {
     [DbContext(typeof(ApiTestingDbContext))]
-    [Migration("20220719081343_Init")]
-    partial class Init
+    [Migration("20220721070453_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace ApiTesting.Migrations
                     b.ToTable("DocumentFiles");
                 });
 
-            modelBuilder.Entity("ApiTesting.Models.Treatment", b =>
+            modelBuilder.Entity("ApiTesting.Models.TreatmentNote", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
@@ -54,6 +54,9 @@ namespace ApiTesting.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("FileName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Key")
                         .HasColumnType("text");
 
                     b.Property<string>("Message")

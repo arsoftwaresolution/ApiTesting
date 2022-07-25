@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiTesting.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -484,6 +484,7 @@ namespace ApiTesting.Migrations
                     Date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Message = table.Column<string>(type: "text", nullable: true),
                     FileName = table.Column<string>(type: "text", nullable: true),
+                    Key = table.Column<string>(type: "text", nullable: true),
                     TherapistId = table.Column<string>(type: "text", nullable: true),
                     PatientId = table.Column<string>(type: "text", nullable: true)
                 },

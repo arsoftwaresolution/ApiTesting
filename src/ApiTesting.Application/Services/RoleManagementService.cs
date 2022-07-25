@@ -64,27 +64,19 @@ namespace ApiTesting.Services
             });
             return assignUserRole;
         }
-        public async Task AssignPermissionRolesAsync(string id,AssignPermissionsRequest assignPermissionsRequest)
+        public async Task AssignPermissionRolesAsync(string id, AssignPermissionsRequest assignPermissionsRequest)
         {
             await _managementApiClient.Roles.AssignPermissionsAsync(id, new AssignPermissionsRequest
             {
                 Permissions = assignPermissionsRequest.Permissions,
             });
         }
-        public async Task RemovePermissionRolesAsync(string id, AssignPermissionsRequest assignPermissionsRequest)
+        public async Task UpdatePermissionRolesAsync(string id, AssignPermissionsRequest assignPermissionsRequest)
         {
-            try
+            await _managementApiClient.Roles.RemovePermissionsAsync(id, new AssignPermissionsRequest
             {
-                await _managementApiClient.Roles.RemovePermissionsAsync(id, new AssignPermissionsRequest 
-                {
-                    Permissions=assignPermissionsRequest.Permissions,
-                });
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-
+                Permissions = assignPermissionsRequest.Permissions,
+            });
         }
         public async Task<IPagedList<Permission>> GetPermissionsRolesAsync(string id)
         {
@@ -105,22 +97,5 @@ namespace ApiTesting.Services
             });
             return userList;
         }
-        //public async Task<EmailTemplate> AssignUserRoleAsync(EmailTemplateCreateRequest email)
-        //{
-        //    var assignUserRole = await _managementApiClient.EmailTemplates.CreateAsync(new EmailTemplateCreateRequest
-        //    {
-        //        Body = email.Body,
-        //        Enabled = email.Enabled,
-        //        From = email.From,
-        //        Subject = email.Subject,
-        //        Template = email.Template,
-        //        ResultUrl = email.ResultUrl,
-        //        Syntax = email.Syntax,
-        //        UrlLifetimeInSeconds = email.UrlLifetimeInSeconds,
-
-        //    });
-        //    return assignUserRole;
-        //}
-
     }
 }

@@ -5,15 +5,16 @@ using Volo.Abp.Domain.Entities;
 
 namespace ApiTesting.Models
 {
-    public class Treatment : Entity<Guid>
+    public class TreatmentNote : Entity<Guid>
     {
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public string Message { get; set; }
         public string FileName { get; set; }
+        public string Key { get; set; }
         public string TherapistId { get; set; }
         public string PatientId { get; set; }
         [NotMapped]
-        public FormFile File { get; set; }
+        public IFormFile File { get; set; }
     }
 }
